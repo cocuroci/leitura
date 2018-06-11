@@ -16,3 +16,11 @@ export const getCategories = () => {
     .then(res => res.json())
     .then(data => data.categories);
 };
+
+export const getAllPosts = () => {
+  return fetch(`${url}/posts`, { headers }).then(res => res.json());
+};
+
+export const getPostsByCategory = category => {
+  return fetch(`${url}/${category}/posts`, { headers }).then(res => res.json());
+};

@@ -3,7 +3,7 @@ import * as Constants from './constants';
 
 export const categories = values => {
   return {
-    type: 'CATEGORIES_LOADED',
+    type: Constants.CATEGORIES_GET_ALL,
     payload: values,
   };
 };
