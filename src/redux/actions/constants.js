@@ -1,0 +1,1 @@
+export const CATEGORIES_GET_ALL = 'CATEGORIES_GET_ALL';

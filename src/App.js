@@ -9,7 +9,23 @@ class App extends Component {
   };
 
   render() {
-    return <div className="App">a</div>;
+    const { categories } = this.props;
+
+    return (
+      <div className="App">
+        <header>Cabeçalho</header>
+        <aside>
+          <nav>
+            <ul>
+              {categories.map(category => (
+                <li key={category.path}>{category.name}</li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+        <section>posts</section>
+      </div>
+    );
   }
 }
 

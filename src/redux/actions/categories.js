@@ -1,4 +1,5 @@
 import * as API from '../../api';
+import * as Constants from './constants';
 
 export const categories = values => {
   return {

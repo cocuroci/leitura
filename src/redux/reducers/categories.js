@@ -1,10 +1,12 @@
+import * as Constants from '../actions/constants';
+
 const initialState = {
   categories: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'CATEGORIES_LOADED':
+    case Constants.CATEGORIES_GET_ALL:
       return {
         categories: action.payload,
       };
