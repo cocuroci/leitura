@@ -10,6 +10,10 @@ class App extends Component {
     this.props.getAllPosts();
   };
 
+  formatterDate = timestamp => {
+    return new Date(timestamp).toDateString();
+  };
+
   render() {
     const { categories, posts } = this.props;
 
@@ -26,7 +30,22 @@ class App extends Component {
           </nav>
         </aside>
         <section>
-          {posts.map(post => <div key={post.id}>{post.title}</div>)}
+          {posts.map(post => (
+            <div key={post.id}>
+              <div>
+                <div>
+                  {this.formatterDate(post.timestamp)}
+                  {post.author}
+                </div>
+                <div>
+                  {post.category}
+                  {post.voteScore}
+                </div>
+              </div>
+              <h2>{post.title}</h2>
+              {post.body}
+            </div>
+          ))}
         </section>
       </div>
     );
@@ -35,8 +54,8 @@ class App extends Component {
 
 const mapStateToProps = ({ categories, posts }) => {
   return {
-    categories: categories.categories,
-    posts: posts.posts,
+    categories: categories,
+    posts: posts,
   };
 };
 
