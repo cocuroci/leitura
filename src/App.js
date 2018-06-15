@@ -19,7 +19,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header>Cabeçalho</header>
+        <header>
+          <h1>Cabeçalho</h1>
+        </header>
         <aside>
           <nav>
             <ul>
